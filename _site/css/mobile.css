@@ -283,6 +283,7 @@ ul {
 .post-header .date {
   font-family: "Ubuntu", Helvetica, Arial, sans-serif;
   text-decoration: lowercase;
+  color: #dddddd;
   margin: 1.5em 0 -1.7em; }
 
 #projects {
