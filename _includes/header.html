@@ -1,0 +1,47 @@
+<header>
+    <div class="container">
+        <div class="profile">
+            <div class="social">
+                <a href="http://weibo.com/u/1874048763">
+                    <div data-picture data-alt="Sina Weibo">
+                        <div data-src="/img/weibo16.jpg"></div>
+                        <div data-src="/img/weibo32.jpg"     data-media="(-webkit-min-device-pixel-ratio: 2)"></div>
+                        <noscript><img src="/img/weibo16.jpg" alt="Sina Weibo"></noscript>
+                    </div>
+                </a>
+                <a href="http://github.com/kunghiu">
+                    <div data-picture data-alt="Github">
+                        <div data-src="/img/octocat16.png"></div>
+                        <div data-src="/img/octocat32.png"     data-media="(-webkit-min-device-pixel-ratio: 2)"></div>
+                        <noscript><img src="/img/octocat16.png" alt="Github"></noscript>
+                    </div>
+                </a>
+            </div>
+            <img src="/img/logo54.png" alt="avatar" class="avatar" />
+            <img src="/img/logo108.png" alt="avatar" class="avatar-large" />
+        </div>
+        <h5 class="logo"><a href="http://kunghiu.github.io">Kung Hiu</a></h5>
+        <nav>
+            <ul>
+                {% if page.nav == "blog" %}
+                    <li><a href="http://kunghiu.github.io" class="active">Blog</a></li>
+                {% else %}
+                    <li><a href="http://kunghiu.github.io">Blog</a></li>
+                {% endif %}
+                {% if page.nav == "about" %}
+                <li><a href="http://kunghiu.github.io/about" class="active">About</a></li>
+                {% else %}
+                <li><a href="http://kunghiu.github.io/about">About</a></li>
+                {% endif %}
+                {% if page.nav == "projects" %}
+                <li><a href="http://kunghiu.github.io/projects" class="active">Projects</a></li>
+                {% else %}
+                <li><a href="http://kunghiu.github.io/projects">Projects</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <div class="nav-slider">
+            <div class="nav-selection {{ page.nav }}"></div>
+        </div>
+    </div>
+</header>
