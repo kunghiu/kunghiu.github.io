@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title></title>
+        <description> - Kung Hiu</description>
+        <link>http://kunghiu.github.io</link>
+        <link>http://kunghiu.github.io</link>
+        <lastBuildDate>2014-01-11T05:05:42+08:00</lastBuildDate>
+        <pubDate>2014-01-11T05:05:42+08:00</pubDate>
+        <ttl>1800</ttl>
+
+
+        <item>
+                <title>The First Day of My Github Pages</title>
+                <description>&lt;p&gt;This post marks that the first day of the establish of this Github blogsite.
+Though it cost me almost two days of it, it really makes me happy.&lt;/p&gt;
+</description>
+                <link>http://kunghiu.github.io/2014/0111/hello-world</link>
+                <guid>http://kunghiu.github.io/2014/0111/hello-world</guid>
+                <pubDate>2014-01-11T00:00:00+08:00</pubDate>
+        </item>
+
+
+</channel>
+</rss>

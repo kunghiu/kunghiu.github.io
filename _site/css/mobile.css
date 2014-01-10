@@ -52,12 +52,17 @@ h4 {
 h5 {
   font-size: 1.2rem; }
 
-h5.logo {
+.logo {
   font-size: 1.6rem; }
 
 h1.hero {
   font-size: 2.5rem;
   margin: 0.3em 0 0.1em; }
+
+.site-description {
+  font-style: italic;
+  font-size: 1rem;
+  color: #A3A199;}
 
 p {
   line-height: 1.5em;
@@ -136,13 +141,6 @@ header .nav-selection {
   -o-transition-timing-function: compact(linear, false, false, false, false, false, false, false, false);
   transition-timing-function: compact(linear, false, false, false, false, false, false, false, false); }
 
-header .nav-selection.about {
-  width: 44px;
-  -webkit-transform: translateX(51px);
-  -moz-transform: translateX(51px);
-  -ms-transform: translateX(51px);
-  -o-transform: translateX(51px);
-  transform: translateX(51px); }
 
 header .nav-selection.blog {
   width: 33px;
@@ -152,14 +150,32 @@ header .nav-selection.blog {
   -o-transform: translateX(0);
   transform: translateX(0); }
 
+
+header .nav-selection.archive {
+  width: 54px;
+  -webkit-transform: translateX(52px);
+  -moz-transform: translateX(52px);
+  -ms-transform: translateX(52px);
+  -o-transform: translateX(52px);
+  transform: translateX(52px); }
+
+
+
+header .nav-selection.about {
+  width: 44px;
+  -webkit-transform: translateX(128px);
+  -moz-transform: translateX(128px);
+  -ms-transform: translateX(128px);
+  -o-transform: translateX(128px);
+  transform: translateX(128px); }
+
 header .nav-selection.projects {
   width: 59px;
-  -webkit-transform: translateX(114px);
-  -moz-transform: translateX(114px);
-  -ms-transform: translateX(114px);
-  -o-transform: translateX(114px);
-  transform: translateX(114px); }
-
+  -webkit-transform: translateX(174px);
+  -moz-transform: translateX(174px);
+  -ms-transform: translateX(174px);
+  -o-transform: translateX(174px);
+  transform: translateX(174px); }
 header .subnav-selection {
   position: absolute;
   height: 3px;
@@ -374,10 +390,10 @@ pre, .highlight pre, .highlight code {
     margin-top: 35px;}
 
   h2 {
-    font-size: 3.5rem; }
+    font-size: 1.2rem; }
 
   h3 {
-    font-size: 3rem; }
+    font-size: 1.1rem; }
 
   h4 {
     font-size: 2.5rem; }

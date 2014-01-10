@@ -29,16 +29,21 @@
                 {% else %}
                     <li><a href="http://kunghiu.github.io">Blog</a></li>
                 {% endif %}
+                {% if page.nav == "archive" %}
+                <li><a href="http://kunghiu.github.io/archive" class="active">Archive</a></li>
+                {% else %}
+                <li><a href="http://kunghiu.github.io/archive">Archive</a></li>
+                {% endif %}				
                 {% if page.nav == "about" %}
                 <li><a href="http://kunghiu.github.io/about" class="active">About</a></li>
                 {% else %}
                 <li><a href="http://kunghiu.github.io/about">About</a></li>
                 {% endif %}
-                {% if page.nav == "projects" %}
+                <!--{% if page.nav == "projects" %}
                 <li><a href="http://kunghiu.github.io/projects" class="active">Projects</a></li>
                 {% else %}
                 <li><a href="http://kunghiu.github.io/projects">Projects</a></li>
-                {% endif %}
+                {% endif %} -->
             </ul>
         </nav>
         <div class="nav-slider">
