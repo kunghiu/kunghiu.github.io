@@ -5,7 +5,7 @@ layout: post
 ---
 MathJax没有专门给Jekyll配备插件，所以，需要使用常规的JavaScript方法来调用。  
 首先，在<head>...</head>中添加JS链接：  
-{% highlight html %}
+{% highlight HTML %}
 <script type="text/javascript"  
    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>  
 {% endhighlight %}
