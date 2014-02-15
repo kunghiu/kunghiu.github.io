@@ -74,6 +74,42 @@
       <article class="post">
           <div class="post-header">
                 <p class="date">Feb 15, 2014</p>
+                <h1><a href="/2014/0215/Jekyll-duoshuo-comments">为Jekyll添加多说评论系统</a></h1>
+          </div>
+          <div class="post-body">
+            <p>为Jekyll添加多说评论系统，Havee有一篇同名的博文，有兴趣可以搜索一下。<br />
+这篇文章略繁琐，我没看太懂，其核心思想是将多说整合进Jekyll体系，用Jekyll的方式来操作多说的评论。灵活性自不必说，但是考虑到Occam’s Razor（<a href="http://zh.wikipedia.org/zh/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80">奥卡姆剃刀</a>），太Geek也就意味着太浪费。<br />
+实际上，像我等新手来做这个的话，根本用不着那么麻烦。<br />
+首先，登陆<a href="http://duoshuo.com/">多说</a>，注册一个账号是必须的了。紧接着，多说就会提供一个通用代码，在工具菜单之下。  </p>
+
+<div class="highlight"><pre><code class="javascript">  
+<span class="c">&lt;!--</span> <span class="nx">Duoshuo</span> <span class="nx">Comment</span> <span class="nx">BEGIN</span> <span class="o">--&gt;</span>  
+	<span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;ds-thread&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;  </span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>  
+<span class="kd">var</span> <span class="nx">duoshuoQuery</span> <span class="o">=</span> <span class="p">{</span><span class="nx">short_name</span><span class="o">:</span><span class="s2">&quot;yourshortnamehere&quot;</span><span class="p">};</span>  
+	<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>  
+		<span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>  
+		<span class="nx">ds</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span><span class="nx">ds</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>  
+		<span class="nx">ds</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">&#39;http://static.duoshuo.com/embed.js&#39;</span><span class="p">;</span>  
+		<span class="nx">ds</span><span class="p">.</span><span class="nx">charset</span> <span class="o">=</span> <span class="s1">&#39;UTF-8&#39;</span><span class="p">;</span>  
+		<span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;head&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  
+ 		<span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">ds</span><span class="p">);</span>  
+	<span class="p">})();</span>  
+	<span class="o">&lt;</span><span class="err">/script&gt;  </span>
+<span class="c">&lt;!--</span> <span class="nx">Duoshuo</span> <span class="nx">Comment</span> <span class="nx">END</span> <span class="o">--&gt;</span>
+</code></pre></div>
+
+<p>之后，将其复制粘贴到模板（我的是post.html）中正文div下面，保存上传，即可。<br />
+祝好运！</p>
+
+          </div>
+      </article>
+  
+
+  
+      <article class="post">
+          <div class="post-header">
+                <p class="date">Feb 15, 2014</p>
                 <h1><a href="/2014/0215/Jekyll-UTF-8">给github pages的本地Jekyll服务器设置中文UTF-8</a></h1>
           </div>
           <div class="post-body">
