@@ -1,10 +1,10 @@
 pygments: true
 permalink: /:year/:month:day/:title
-markdown: redcarpet
+markdown: kramdown
 exclude: ['Gemfile','Gemfile.lock','Rakefile','.git']
 paginate: 5
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
+#redcarpet:
+#  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
 author :
   name : Kung Hiu
   email : x.gong@foxmail.com
