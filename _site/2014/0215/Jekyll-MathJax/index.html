@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Archive | Kung Hiu</title>
+  <title>在github pages上使用MathJax | Kung Hiu</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <link rel="shortcut icon" href="/img/logo16.png">
@@ -46,10 +46,10 @@
         <nav>
             <ul>
                 
-                    <li><a href="http://kunghiu.github.io">Blog</a></li>
+                    <li><a href="http://kunghiu.github.io" class="active">Blog</a></li>
                 
                 
-                <li><a href="http://kunghiu.github.io/archive" class="active">Archive</a></li>
+                <li><a href="http://kunghiu.github.io/archive">Archive</a></li>
                 				
                 
                 <li><a href="http://kunghiu.github.io/about">About</a></li>
@@ -60,95 +60,40 @@
             </ul>
         </nav>
         <div class="nav-slider">
-            <div class="nav-selection archive"></div>
+            <div class="nav-selection blog"></div>
         </div>
     </div>
 </header>
 
-
+    
     <section id="main">
         <article class="container">
-          
-          <h1 class="hero">Archive</h1>
-          
-          
+            <article class="post">
+                <div class="post-header">
+                    <p class="date">Feb 15, 2014</p>
+                    <h1>在github pages上使用MathJax</h1>
+                </div>
+                <div class="post-body">
+                    <p>MathJax没有专门给Jekyll配备插件，所以，需要使用常规的JavaScript方法来调用。<br />
+首先，在&lt;head&gt;…&lt;/head&gt;中添加JS链接：  </p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span>  
+   <span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>  
+</code></pre></div>
+
+<p>其次，将Jekyll解析器改为Kramdown，以支持Latex标记。（在_config.yml文件中修改）<br />
+如此，配置部分结束。<br />
+文章撰写时，使用双$符号标记Latex语言。前后皆有双$。<br />
+如果公式（包括双$）前后各有一个空行，则产生换行居中的公式。效果如下：  </p>
+
+<script type="math/tex; mode=display">\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}</script>
 
 
-
-
-
-  
-    
-    
-    
-    
-  
-    
-      <h2>2014</h2>
-      <h3>February</h3>
-      <ul>
-    
-  
-    <li><span>February 15, 2014</span> &raquo; <a href="/2014/0215/Jekyll-UTF-8">给github pages的本地Jekyll服务器设置中文UTF-8</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>February 15, 2014</span> &raquo; <a href="/2014/0215/Jekyll-MathJax">在github pages上使用MathJax</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>February 15, 2014</span> &raquo; <a href="/2014/0215/Classification-Algorithm">The Most Frequently Used Classification Algorithm</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>January</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>January 11, 2014</span> &raquo; <a href="/2014/0111/hello-world">The First Day of My Github Pages</a></li>
-  
-    
-      </ul>
-    
-  
-
-
+                </div>
+            </article>
         </article>
     </section>
-
+    
     <footer>
     <nav class="container">
         <ul>
@@ -157,6 +102,7 @@
     </nav>
 </footer>
 
+</div>
 </body>
 <script type="text/javascript">
 
@@ -194,3 +140,4 @@
 </script>
 
 </html>
+

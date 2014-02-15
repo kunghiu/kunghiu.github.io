@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Archive | Kung Hiu</title>
+  <title>给github pages的本地Jekyll服务器设置中文UTF-8 | Kung Hiu</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <link rel="shortcut icon" href="/img/logo16.png">
@@ -46,10 +46,10 @@
         <nav>
             <ul>
                 
-                    <li><a href="http://kunghiu.github.io">Blog</a></li>
+                    <li><a href="http://kunghiu.github.io" class="active">Blog</a></li>
                 
                 
-                <li><a href="http://kunghiu.github.io/archive" class="active">Archive</a></li>
+                <li><a href="http://kunghiu.github.io/archive">Archive</a></li>
                 				
                 
                 <li><a href="http://kunghiu.github.io/about">About</a></li>
@@ -60,95 +60,47 @@
             </ul>
         </nav>
         <div class="nav-slider">
-            <div class="nav-selection archive"></div>
+            <div class="nav-selection blog"></div>
         </div>
     </div>
 </header>
 
-
+    
     <section id="main">
         <article class="container">
-          
-          <h1 class="hero">Archive</h1>
-          
-          
+            <article class="post">
+                <div class="post-header">
+                    <p class="date">Feb 15, 2014</p>
+                    <h1>给github pages的本地Jekyll服务器设置中文UTF-8</h1>
+                </div>
+                <div class="post-body">
+                    <p>本地启用Jekyll服务器时，会因字符错误，提示“invalid byte sequence in GBK”。<br />
+此问题是因字符编码错误引起的，修改方法如下：<br />
+找到：  </p>
 
+<div class="highlight"><pre><code class="java"><span class="nl">C:</span><span class="err">\</span><span class="n">RailsInstaller</span><span class="err">\</span><span class="n">Ruby1</span><span class="o">.</span><span class="mf">9.3</span><span class="err">\</span><span class="n">lib</span><span class="err">\</span><span class="n">ruby</span><span class="err">\</span><span class="n">gems</span><span class="err">\</span><span class="mf">1.9</span><span class="o">.</span><span class="mi">1</span><span class="err">\</span><span class="n">gems</span><span class="err">\</span><span class="n">jekyll</span><span class="o">-</span><span class="mf">1.4</span><span class="o">.</span><span class="mi">2</span><span class="err">\</span><span class="n">lib</span><span class="err">\</span><span class="n">jekyll</span><span class="err">\</span><span class="n">convertible</span><span class="o">.</span><span class="na">rb</span>  
+</code></pre></div>
 
+<p>在第38行左右，取消掉原有的两句  </p>
 
+<div class="highlight"><pre><code class="java"><span class="err">#</span><span class="n">self</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="na">read_with_options</span><span class="o">(</span><span class="n">File</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">base</span><span class="o">,</span> <span class="n">name</span><span class="o">),</span>  
+<span class="err">#</span>                                      <span class="n">merged_file_read_opts</span><span class="o">(</span><span class="n">opts</span><span class="o">))</span>  
+</code></pre></div>
 
+<p>添加一句  </p>
 
-  
-    
-    
-    
-    
-  
-    
-      <h2>2014</h2>
-      <h3>February</h3>
-      <ul>
-    
-  
-    <li><span>February 15, 2014</span> &raquo; <a href="/2014/0215/Jekyll-UTF-8">给github pages的本地Jekyll服务器设置中文UTF-8</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>February 15, 2014</span> &raquo; <a href="/2014/0215/Jekyll-MathJax">在github pages上使用MathJax</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>February 15, 2014</span> &raquo; <a href="/2014/0215/Classification-Algorithm">The Most Frequently Used Classification Algorithm</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>January</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>January 11, 2014</span> &raquo; <a href="/2014/0111/hello-world">The First Day of My Github Pages</a></li>
-  
-    
-      </ul>
-    
-  
+<div class="highlight"><pre><code class="java"><span class="n">self</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="na">read_with_options</span><span class="o">(</span><span class="n">File</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">base</span><span class="o">,</span> <span class="n">name</span><span class="o">),:</span><span class="n">encoding</span><span class="o">=&gt;</span><span class="s">&quot;utf-8&quot;</span><span class="o">)</span>  
+</code></pre></div>
 
+<p>即可。<br />
+重新运行Jekyll server，Generating… done.<br />
+祝好运！</p>
 
+                </div>
+            </article>
         </article>
     </section>
-
+    
     <footer>
     <nav class="container">
         <ul>
@@ -157,6 +109,7 @@
     </nav>
 </footer>
 
+</div>
 </body>
 <script type="text/javascript">
 
@@ -194,3 +147,4 @@
 </script>
 
 </html>
+
