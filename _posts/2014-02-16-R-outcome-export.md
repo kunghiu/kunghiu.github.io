@@ -41,7 +41,7 @@ stargazer(linear.1, linear.2, probit.model, title="Regression Results", align=TR
 #compare sever models in one table.
 #It's really awesome!
 @
-{% highlight R %}
+{% endhighlight %}
 实际上，我的博客现在也支持Latex语言了，信不信？我输出一段儿Latex给各位看一下，哈哈。  
 
 $$
