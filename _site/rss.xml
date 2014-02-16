@@ -5,14 +5,43 @@
         <description> - Kung Hiu</description>
         <link>http://kunghiu.github.io</link>
         <link>http://kunghiu.github.io</link>
-        <lastBuildDate>2014-02-16T14:48:17+08:00</lastBuildDate>
-        <pubDate>2014-02-16T14:48:17+08:00</pubDate>
+        <lastBuildDate>2014-02-16T15:19:37+08:00</lastBuildDate>
+        <pubDate>2014-02-16T15:19:37+08:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
+                <title>R语言拾遗之二[function中变量名操作]</title>
+                <description>&lt;p&gt;函数编程中，经常会遇到新建变量名的操作，如何使R可以自动新建变量名，就成为一个问题。&lt;br /&gt;
+本文对R中操作变量名的get()，exists()，assign()函数进行一个简单总结。&lt;br /&gt;
+其实，最靠谱的，就是get()，它负责把某个字符（串）转换成变量名，可以在&amp;lt;-符号左边出现。顾名思义，exists()就是看变量名存在与否，assign()是给某变量名赋值，与&amp;lt;-符号类似。&lt;br /&gt;
+如下get()的使用示例，shortname[i]所指向的元素自动成为一个变量名参与到函数之中。  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;newdata &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; array&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;iniarray&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;length&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;shortname&lt;span class=&quot;p&quot;&gt;)){&lt;/span&gt;
+  newdata &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; cbind&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;newdata&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; get&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;shortname&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;如下，”a[1]”整个是一个变量名，而不代表向量a的第一个元素。  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;a &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;
+assign&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;a[1]&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+a&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;#FALSE&lt;/span&gt;
+exists&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;a[1]&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#TRUE&lt;/span&gt;
+get&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;a[1]&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#TRUE&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+                <link>http://kunghiu.github.io/2014/0216/R-varname-get</link>
+                <guid>http://kunghiu.github.io/2014/0216/R-varname-get</guid>
+                <pubDate>2014-02-16T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
                 <title>R语言拾遗之一[文件名操作]</title>
-                <description>&lt;p&gt;设定工作目录：  &lt;/p&gt;
+                <description>&lt;p&gt;做数据整理，经常会遇到好多好多个数据文件，需要进行合并，拼接等操作，一个个双击打开，复制粘贴，关闭，实在太消耗短暂的绳命。作为一种程序语言，R自然可以将这一切进行简化。&lt;br /&gt;
+设定工作目录：  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;getwd&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 setwd&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;F:/DATA&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
