@@ -14,12 +14,12 @@ git clone git@github.com:kunghiu/kunghiu.github.io.git
 {% highlight Ruby %}
 cd kunghiu.github.io
 git add  --all
-git commit -m "init new"
+git commit -m "blog update"
 git push origin master
 {% endhighlight %} 
 现在，我们来对上述命令建立一个假名（alias），使用批处理的方式来实现：  
 {% highlight Ruby %}
-alias blogupdate='cd kunghiu.github.io; git add  --all; git commit -m "init new"; git push origin master'
+git config --global alias.blog '!cd kunghiu.github.io && git add  --all && git commit -m "blog update" && git push origin master'
 {% endhighlight %}
-之后，每次在本地site/kunghiu.github.io下更新完博客之后，只需要在git端输入blogupdate，一切就统统解决啦！  
+之后，每次在本地site/kunghiu.github.io下更新完博客之后，只需要在git端输入git blog，一切就统统解决啦！  
 赶快来试试吧！
