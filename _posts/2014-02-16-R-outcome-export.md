@@ -43,56 +43,7 @@ stargazer(linear.1, linear.2, probit.model, title="Regression Results", align=TR
 @
 {% endhighlight %}
 实际上，我的博客现在也支持Latex语言了，信不信？我输出一段儿Latex给各位看一下，哈哈。  
-
-$$
-\begin{table}[!htbp] \centering 
-  \caption{Regression Results} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-4} 
-\\[-1.8ex] & \multicolumn{2}{c}{rating} & \multicolumn{1}{c}{high.rating} \\ 
-\\[-1.8ex] & \multicolumn{2}{c}{\textit{OLS}} & \multicolumn{1}{c}{\textit{probit}} \\ 
-\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)}\\ 
-\hline \\[-1.8ex] 
- complaints & 0.692^{***} & 0.682^{***} &  \\ 
-  & (0.149) & (0.129) &  \\ 
-  & & & \\ 
- privileges & -0.104 & -0.103 &  \\ 
-  & (0.135) & (0.129) &  \\ 
-  & & & \\ 
- learning & 0.249 & 0.238^{*} & 0.164^{***} \\ 
-  & (0.160) & (0.139) & (0.053) \\ 
-  & & & \\ 
- raises & -0.033 &  &  \\ 
-  & (0.202) &  &  \\ 
-  & & & \\ 
- critical & 0.015 &  & -0.001 \\ 
-  & (0.147) &  & (0.044) \\ 
-  & & & \\ 
- advance &  &  & -0.062 \\ 
-  &  &  & (0.042) \\ 
-  & & & \\ 
- Constant & 11.011 & 11.258 & -7.476^{**} \\ 
-  & (11.704) & (7.318) & (3.570) \\ 
-  & & & \\ 
-\hline \\[-1.8ex] 
-Observations & \multicolumn{1}{c}{30} & \multicolumn{1}{c}{30} & \multicolumn{1}{c}{30} \\ 
-R$^{2}$ & \multicolumn{1}{c}{0.715} & \multicolumn{1}{c}{0.715} &  \\ 
-Adjusted R$^{2}$ & \multicolumn{1}{c}{0.656} & \multicolumn{1}{c}{0.682} &  \\ 
-Log Likelihood &  &  & \multicolumn{1}{c}{-9.087} \\ 
-Akaike Inf. Crit. &  &  & \multicolumn{1}{c}{26.175} \\ 
-Residual Std. Error & \multicolumn{1}{c}{7.139 (df = 24)} & \multicolumn{1}{c}{6.863 (df = 26)} &  \\ 
-F Statistic & \multicolumn{1}{c}{12.063$^{***}$ (df = 5; 24)} & \multicolumn{1}{c}{21.743$^{***}$ (df = 3; 26)} &  \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\normalsize 
-\end{tabular} 
-\end{table}
-$$
+————没成功！！！只能支持公式，不支持表格！！！  
   
 ###图片输出  
 图片输出，在Rmd中，应设置fig.show='asis'；在Rnw中，应设置fig=TRUE。  
