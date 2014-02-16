@@ -10,6 +10,7 @@ layout: post
 如下get()的使用示例，shortname[i]所指向的元素自动成为一个变量名参与到函数之中。  
 {% highlight R %}
 newdata <- array(iniarray)
+#assuming shortname is a vector of varnames
 for (i in 1:length(shortname)){
   newdata <- cbind(newdata, get(shortname[i])$value)
 }
