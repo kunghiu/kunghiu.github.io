@@ -45,9 +45,6 @@ stargazer(linear.1, linear.2, probit.model, title="Regression Results", align=TR
 实际上，我的博客现在也支持Latex语言了，信不信？我输出一段儿Latex给各位看一下，哈哈。  
 
 $$
-% Table created by stargazer v.4.5.3 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: 周日, 二月 16, 2014 - 22:04:36
-% Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Regression Results} 
   \label{} 
