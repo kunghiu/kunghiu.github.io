@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Archive | Kung Hiu</title>
+  <title>R语言拾遗之一[文件名操作] | Kung Hiu</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <link rel="shortcut icon" href="/img/logo16.png">
@@ -46,10 +46,10 @@
         <nav>
             <ul>
                 
-                    <li><a href="http://kunghiu.github.io">Blog</a></li>
+                    <li><a href="http://kunghiu.github.io" class="active">Blog</a></li>
                 
                 
-                <li><a href="http://kunghiu.github.io/archive" class="active">Archive</a></li>
+                <li><a href="http://kunghiu.github.io/archive">Archive</a></li>
                 				
                 
                 <li><a href="http://kunghiu.github.io/about">About</a></li>
@@ -60,125 +60,68 @@
             </ul>
         </nav>
         <div class="nav-slider">
-            <div class="nav-selection archive"></div>
+            <div class="nav-selection blog"></div>
         </div>
     </div>
 </header>
 
-
+    
     <section id="main">
         <article class="container">
-          
-          <h1 class="hero">Archive</h1>
-          
-          
+            <article class="post">
+                <div class="post-header">
+                    <p class="date">Feb 16, 2014</p>
+                    <h1>R语言拾遗之一[文件名操作]</h1>
+                </div>
+                <div class="post-body">
+                    <p>设定工作目录：  </p>
 
+<div class="highlight"><pre><code class="r">getwd<span class="p">()</span>
+setwd<span class="p">(</span><span class="s">&quot;F:/DATA&quot;</span><span class="p">)</span>
+</code></pre></div>
 
+<p>批量文件名获取（包含后缀）：  </p>
 
+<div class="highlight"><pre><code class="r">list.files<span class="p">(</span>path <span class="o">=</span> <span class="s">&quot;F:/DATA&quot;</span> <span class="p">,</span>pattern<span class="o">=</span><span class="s">&quot;*.sav&quot;</span> <span class="p">)</span>
+</code></pre></div>
 
+<p>生成完整路径：  </p>
 
-  
-    
-    
-    
-    
-  
-    
-      <h2>2014</h2>
-      <h3>February</h3>
-      <ul>
-    
-  
-    <li><span>February 16, 2014</span> &raquo; <a href="/2014/0216/R-filename">R语言拾遗之一[文件名操作]</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>February 15, 2014</span> &raquo; <a href="/2014/0215/Jekyll-duoshuo-comments">为Jekyll添加多说评论系统</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>February 15, 2014</span> &raquo; <a href="/2014/0215/Jekyll-UTF-8">给github pages的本地Jekyll服务器设置中文UTF-8</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>February 15, 2014</span> &raquo; <a href="/2014/0215/Jekyll-MathJax">在github pages上使用MathJax</a></li>
-  
-    
-          
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>February 15, 2014</span> &raquo; <a href="/2014/0215/Classification-Algorithm">The Most Frequently Used Classification Algorithm</a></li>
-  
-    
-          
-        
-          </ul>
-          <h3>January</h3>
-          <ul>
-        
-      
-    
-  
-    
-    
-    
-    
-  
-    
-  
-    <li><span>January 11, 2014</span> &raquo; <a href="/2014/0111/hello-world">The First Day of My Github Pages</a></li>
-  
-    
-      </ul>
-    
-  
+<div class="highlight"><pre><code class="r"><span class="p">(</span>f <span class="o">&lt;-</span> file.path<span class="p">(</span><span class="s">&quot;F:/DADA&quot;</span><span class="p">,</span>list.files<span class="p">(</span>path <span class="o">=</span> <span class="s">&quot;F:/DATA&quot;</span> <span class="p">,</span>pattern<span class="o">=</span><span class="s">&quot;*.sav&quot;</span> <span class="p">)))</span>
+<span class="c1"># file.path(&quot;F:/DADA&quot;, *filenamevector)</span>
+</code></pre></div>
 
+<p>去掉文件名后缀：  </p>
 
+<div class="highlight"><pre><code class="r">strsplit<span class="p">(</span><span class="s">&quot;nameabc.sav&quot;</span><span class="p">,</span>split<span class="o">=</span><span class="s">&quot;\\.&quot;</span><span class="p">)[[</span><span class="m">1</span><span class="p">]][</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+
+<p>批量去掉文件名后缀：  </p>
+
+<div class="highlight"><pre><code class="r">matrix<span class="p">(</span>unlist<span class="p">(</span>strsplit<span class="p">(</span>list.files<span class="p">(</span>path <span class="o">=</span> <span class="s">&quot;F:/DATA&quot;</span> <span class="p">,</span>pattern<span class="o">=</span><span class="s">&quot;*.sav&quot;</span> <span class="p">),</span>split<span class="o">=</span><span class="s">&quot;\\.&quot;</span><span class="p">)),</span><span class="m">2</span><span class="p">)[</span><span class="m">1</span><span class="p">,]</span>
+</code></pre></div>
+
+<p>上述语句相对简单，以后如果有空，可以整理成function来使用。</p>
+
+                </div>
+				<!-- Duoshuo Comment BEGIN -->
+					<div class="ds-thread"></div>
+				<script type="text/javascript">
+				var duoshuoQuery = {short_name:"wwwanaharb"};
+						(function() {
+								var ds = document.createElement('script');
+								ds.type = 'text/javascript';ds.async = true;
+								ds.src = 'http://static.duoshuo.com/embed.js';
+								ds.charset = 'UTF-8';
+								(document.getElementsByTagName('head')[0] 
+								|| document.getElementsByTagName('body')[0]).appendChild(ds);
+						})();
+						</script>
+				<!-- Duoshuo Comment END -->
+            </article>
         </article>
     </section>
-
+    
     <footer>
     <nav class="container">
         <ul>
@@ -187,6 +130,7 @@
     </nav>
 </footer>
 
+</div>
 </body>
 <script type="text/javascript">
 
@@ -224,3 +168,4 @@
 </script>
 
 </html>
+

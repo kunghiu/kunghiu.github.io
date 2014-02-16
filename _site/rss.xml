@@ -5,20 +5,55 @@
         <description> - Kung Hiu</description>
         <link>http://kunghiu.github.io</link>
         <link>http://kunghiu.github.io</link>
-        <lastBuildDate>2014-02-15T21:01:31+08:00</lastBuildDate>
-        <pubDate>2014-02-15T21:01:31+08:00</pubDate>
+        <lastBuildDate>2014-02-16T13:47:31+08:00</lastBuildDate>
+        <pubDate>2014-02-16T13:47:31+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>R语言拾遗之一[文件名操作]</title>
+                <description>&lt;p&gt;设定工作目录：  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;getwd&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+setwd&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;F:/DATA&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;批量文件名获取（包含后缀）：  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;list.files&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;F:/DATA&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;pattern&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;*.sav&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;生成完整路径：  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;f &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; file.path&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;F:/DADA&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;list.files&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;F:/DATA&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;pattern&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;*.sav&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# file.path(&amp;quot;F:/DADA&amp;quot;, *filenamevector)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;去掉文件名后缀：  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;strsplit&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;nameabc.sav&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;split&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\\.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;批量去掉文件名后缀：  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;matrix&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;unlist&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;strsplit&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;list.files&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;F:/DATA&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;pattern&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;*.sav&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;split&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\\.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;上述语句相对简单，以后如果有空，可以整理成function来使用。&lt;/p&gt;
+</description>
+                <link>http://kunghiu.github.io/2014/0216/R-filename</link>
+                <guid>http://kunghiu.github.io/2014/0216/R-filename</guid>
+                <pubDate>2014-02-16T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>为Jekyll添加多说评论系统</title>
                 <description>&lt;p&gt;为Jekyll添加多说评论系统，Havee有一篇同名的博文，有兴趣可以搜索一下。&lt;br /&gt;
 这篇文章略繁琐，我没看太懂，其核心思想是将多说整合进Jekyll体系，用Jekyll的方式来操作多说的评论。灵活性自不必说，但是考虑到Occam’s Razor（&lt;a href=&quot;http://zh.wikipedia.org/zh/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80&quot;&gt;奥卡姆剃刀&lt;/a&gt;），太Geek也就意味着太浪费。&lt;br /&gt;
 实际上，像我等新手来做这个的话，根本用不着那么麻烦。&lt;br /&gt;
-首先，登陆&lt;a href=&quot;http://duoshuo.com/&quot;&gt;多说&lt;/a&gt;，注册一个账号是必须的了。紧接着，多说就会提供一个通用代码，在工具菜单之下。  &lt;/p&gt;
+首先，登陆&lt;a href=&quot;http://duoshuo.com/&quot;&gt;多说&lt;/a&gt;，注册一个账号是必须的了。紧接着，多说就会提供一个通用代码，在工具菜单之下。类似：  &lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;  
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Duoshuo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Comment&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BEGIN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;  
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Duoshuo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Comment&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BEGIN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;  
 	&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ds-thread&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/div&amp;gt;  &lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;  
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;duoshuoQuery&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;short_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;yourshortnamehere&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;  

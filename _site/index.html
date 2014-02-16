@@ -73,6 +73,46 @@
   
       <article class="post">
           <div class="post-header">
+                <p class="date">Feb 16, 2014</p>
+                <h1><a href="/2014/0216/R-filename">R语言拾遗之一[文件名操作]</a></h1>
+          </div>
+          <div class="post-body">
+            <p>设定工作目录：  </p>
+
+<div class="highlight"><pre><code class="r">getwd<span class="p">()</span>
+setwd<span class="p">(</span><span class="s">&quot;F:/DATA&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>批量文件名获取（包含后缀）：  </p>
+
+<div class="highlight"><pre><code class="r">list.files<span class="p">(</span>path <span class="o">=</span> <span class="s">&quot;F:/DATA&quot;</span> <span class="p">,</span>pattern<span class="o">=</span><span class="s">&quot;*.sav&quot;</span> <span class="p">)</span>
+</code></pre></div>
+
+<p>生成完整路径：  </p>
+
+<div class="highlight"><pre><code class="r"><span class="p">(</span>f <span class="o">&lt;-</span> file.path<span class="p">(</span><span class="s">&quot;F:/DADA&quot;</span><span class="p">,</span>list.files<span class="p">(</span>path <span class="o">=</span> <span class="s">&quot;F:/DATA&quot;</span> <span class="p">,</span>pattern<span class="o">=</span><span class="s">&quot;*.sav&quot;</span> <span class="p">)))</span>
+<span class="c1"># file.path(&quot;F:/DADA&quot;, *filenamevector)</span>
+</code></pre></div>
+
+<p>去掉文件名后缀：  </p>
+
+<div class="highlight"><pre><code class="r">strsplit<span class="p">(</span><span class="s">&quot;nameabc.sav&quot;</span><span class="p">,</span>split<span class="o">=</span><span class="s">&quot;\\.&quot;</span><span class="p">)[[</span><span class="m">1</span><span class="p">]][</span><span class="m">1</span><span class="p">]</span>
+</code></pre></div>
+
+<p>批量去掉文件名后缀：  </p>
+
+<div class="highlight"><pre><code class="r">matrix<span class="p">(</span>unlist<span class="p">(</span>strsplit<span class="p">(</span>list.files<span class="p">(</span>path <span class="o">=</span> <span class="s">&quot;F:/DATA&quot;</span> <span class="p">,</span>pattern<span class="o">=</span><span class="s">&quot;*.sav&quot;</span> <span class="p">),</span>split<span class="o">=</span><span class="s">&quot;\\.&quot;</span><span class="p">)),</span><span class="m">2</span><span class="p">)[</span><span class="m">1</span><span class="p">,]</span>
+</code></pre></div>
+
+<p>上述语句相对简单，以后如果有空，可以整理成function来使用。</p>
+
+          </div>
+      </article>
+  
+
+  
+      <article class="post">
+          <div class="post-header">
                 <p class="date">Feb 15, 2014</p>
                 <h1><a href="/2014/0215/Jekyll-duoshuo-comments">为Jekyll添加多说评论系统</a></h1>
           </div>
@@ -80,10 +120,9 @@
             <p>为Jekyll添加多说评论系统，Havee有一篇同名的博文，有兴趣可以搜索一下。<br />
 这篇文章略繁琐，我没看太懂，其核心思想是将多说整合进Jekyll体系，用Jekyll的方式来操作多说的评论。灵活性自不必说，但是考虑到Occam’s Razor（<a href="http://zh.wikipedia.org/zh/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80">奥卡姆剃刀</a>），太Geek也就意味着太浪费。<br />
 实际上，像我等新手来做这个的话，根本用不着那么麻烦。<br />
-首先，登陆<a href="http://duoshuo.com/">多说</a>，注册一个账号是必须的了。紧接着，多说就会提供一个通用代码，在工具菜单之下。  </p>
+首先，登陆<a href="http://duoshuo.com/">多说</a>，注册一个账号是必须的了。紧接着，多说就会提供一个通用代码，在工具菜单之下。类似：  </p>
 
-<div class="highlight"><pre><code class="javascript">  
-<span class="c">&lt;!--</span> <span class="nx">Duoshuo</span> <span class="nx">Comment</span> <span class="nx">BEGIN</span> <span class="o">--&gt;</span>  
+<div class="highlight"><pre><code class="javascript"><span class="c">&lt;!--</span> <span class="nx">Duoshuo</span> <span class="nx">Comment</span> <span class="nx">BEGIN</span> <span class="o">--&gt;</span>  
 	<span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;ds-thread&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;  </span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>  
 <span class="kd">var</span> <span class="nx">duoshuoQuery</span> <span class="o">=</span> <span class="p">{</span><span class="nx">short_name</span><span class="o">:</span><span class="s2">&quot;yourshortnamehere&quot;</span><span class="p">};</span>  
@@ -193,24 +232,12 @@ Logistic回归，大家应该都耳熟能详的，它的因变量是1或0，自�
       </article>
   
 
-  
-      <article class="post">
-          <div class="post-header">
-                <p class="date">Jan 11, 2014</p>
-                <h1><a href="/2014/0111/hello-world">The First Day of My Github Pages</a></h1>
-          </div>
-          <div class="post-body">
-            <p>This post marks that the first day of the establish of this Github blogsite.
-Though it cost me almost two days of it, it really makes me happy.</p>
-
-          </div>
-      </article>
-  
-
 
 <!-- Pagination links -->
 <div class="pagination">
   
+  
+    <a href="/page2" class="next button"><span>Older</span></a>
   
 </div>
 
