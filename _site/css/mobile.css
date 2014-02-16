@@ -355,12 +355,12 @@ ul {
   position: relative; }
 
 .pagination a.previous span:before {
-  content: "¡û";
+  content: "â†";
   position: absolute;
   left: -1.5rem; }
 
 .pagination a.next span:after {
-  content: "¡ú";
+  content: "â†’";
   position: absolute;
   left: 2.8rem; }
 
