@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 @import "http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:300,500,300italic,500italic|Ubuntu+Condensed";
 * {
   -webkit-box-sizing: border-box;
@@ -161,13 +161,21 @@ header .nav-selection.archive {
 
 
 
-header .nav-selection.about {
-  width: 44px;
+header .nav-selection.category {
+  width: 64px;
   -webkit-transform: translateX(128px);
   -moz-transform: translateX(128px);
   -ms-transform: translateX(128px);
   -o-transform: translateX(128px);
   transform: translateX(128px); }
+
+header .nav-selection.about {
+  width: 54px;
+  -webkit-transform: translateX(202px);
+  -moz-transform: translateX(202px);
+  -ms-transform: translateX(202px);
+  -o-transform: translateX(202px);
+  transform: translateX(202px); }
 
 header .nav-selection.projects {
   width: 59px;
@@ -176,6 +184,7 @@ header .nav-selection.projects {
   -ms-transform: translateX(174px);
   -o-transform: translateX(174px);
   transform: translateX(174px); }
+
 header .subnav-selection {
   position: absolute;
   height: 3px;
