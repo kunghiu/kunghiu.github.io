@@ -2,6 +2,8 @@
 title: 为Jekyll添加多说评论系统
 nav: blog
 layout: post
+categories: 
+- "github pages"
 ---
 为Jekyll添加多说评论系统，Havee有一篇同名的博文，有兴趣可以搜索一下。  
 这篇文章略繁琐，我没看太懂，其核心思想是将多说整合进Jekyll体系，用Jekyll的方式来操作多说的评论。灵活性自不必说，但是考虑到Occam's Razor（[奥卡姆剃刀](http://zh.wikipedia.org/zh/%E5%A5%A5%E5%8D%A1%E5%A7%86%E5%89%83%E5%88%80)），太Geek也就意味着太浪费。  

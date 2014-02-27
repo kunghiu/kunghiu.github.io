@@ -2,6 +2,8 @@
 title: R语言拾遗之三[结果输出]
 nav: blog
 layout: post
+categories: 
+- "R语言"
 ---
 
 ##结果输出，最主要的是数据集输出和表格输出两类  

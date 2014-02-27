@@ -2,6 +2,8 @@
 title: 使用alias批处理更新github pages
 nav: blog
 layout: post
+categories: 
+- "github pages"
 ---
 
 每每次上传博文，都要来一套git add，commit，push，输入用户名密码，实在繁琐，于是，想到了使用批处理的方法来实现博客更新。		

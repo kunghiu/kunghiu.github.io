@@ -2,6 +2,8 @@
 title: The Most Frequently Used Classification Algorithm
 nav: blog
 layout: post
+categories: 
+- "github pages"
 ---
 
 常见的分类算法都有哪些？  

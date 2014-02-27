@@ -2,6 +2,8 @@
 title: R语言拾遗之二[function中变量名操作]
 nav: blog
 layout: post
+categories: 
+- "R语言"
 ---
 
 函数编程中，经常会遇到新建变量名的操作，如何使R可以自动新建变量名，就成为一个问题。  

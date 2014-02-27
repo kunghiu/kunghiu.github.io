@@ -2,6 +2,8 @@
 title: The First Day of My Github Pages
 nav: blog
 layout: post
+categories: 
+- "Hello World"
 ---
 
 This post marks that the first day of the establish of this Github blogsite.
