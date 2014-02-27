@@ -2,6 +2,8 @@
 title: 在github pages上使用MathJax
 nav: blog
 layout: post
+categories: 
+- "github pages"
 ---
 MathJax没有专门给Jekyll配备插件，所以，需要使用常规的JavaScript方法来调用。  
 首先，在<head>...</head>中添加JS链接：  
