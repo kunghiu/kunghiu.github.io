@@ -4,6 +4,8 @@ nav: blog
 layout: post
 categories: 
 - "R语言"
+tags:
+- "ggplot2"
 ---
 
 高大上的ggplot2，估计很多人都尝过其甜头了。  
