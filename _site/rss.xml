@@ -3,12 +3,42 @@
 <channel>
         <title></title>
         <description> - Kung Hiu</description>
-        <link>http://kunghiu.github.io</link>
-        <link>http://kunghiu.github.io</link>
-        <lastBuildDate>2014-02-16T15:46:45+08:00</lastBuildDate>
-        <pubDate>2014-02-16T15:46:45+08:00</pubDate>
+        <link>http://www.anaharb.com</link>
+        <link>http://www.anaharb.com</link>
+        <lastBuildDate>2014-02-21T02:36:53+08:00</lastBuildDate>
+        <pubDate>2014-02-21T02:36:53+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>使用alias批处理更新github pages</title>
+                <description>&lt;p&gt;每每次上传博文，都要来一套git add，commit，push，输入用户名密码，实在繁琐，于是，想到了使用批处理的方法来实现博客更新。		
+首先，要确认自己的repository是使用ssh方式同步的，可以避免http方式的需要每次都填写用户名和密码。  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;clone&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@github&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:kunghiu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kunghiu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# donot use https method.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;通常，我们需要在git terminal输入如下命令：  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kunghiu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;all&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;blog update&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;现在，我们来对上述命令建立一个假名（alias），使用批处理的方式来实现：  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;alias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blog&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;!cd kunghiu.github.io &amp;amp;&amp;amp; git add  --all &amp;amp;&amp;amp; git commit -m &amp;quot;blog update&amp;quot; &amp;amp;&amp;amp; git push origin master&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;之后，每次在本地site/kunghiu.github.io下更新完博客之后，只需要在git端输入git blog，一切就统统解决啦！&lt;br /&gt;
+赶快来试试吧！&lt;/p&gt;
+</description>
+                <link>http://www.anaharb.com/2014/0216/git-alais-update</link>
+                <guid>http://www.anaharb.com/2014/0216/git-alais-update</guid>
+                <pubDate>2014-02-16T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>R语言拾遗之二[function中变量名操作]</title>
@@ -18,6 +48,7 @@
 如下get()的使用示例，shortname[i]所指向的元素自动成为一个变量名参与到函数之中。  &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;newdata &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; array&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;iniarray&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#assuming shortname is a vector of varnames&lt;/span&gt;
 &lt;span class=&quot;kr&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;length&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;shortname&lt;span class=&quot;p&quot;&gt;)){&lt;/span&gt;
   newdata &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; cbind&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;newdata&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; get&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;shortname&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;value&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -33,8 +64,68 @@ get&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
-                <link>http://kunghiu.github.io/2014/0216/R-varname-get</link>
-                <guid>http://kunghiu.github.io/2014/0216/R-varname-get</guid>
+                <link>http://www.anaharb.com/2014/0216/R-varname-get</link>
+                <guid>http://www.anaharb.com/2014/0216/R-varname-get</guid>
+                <pubDate>2014-02-16T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>R语言拾遗之三[结果输出]</title>
+                <description>&lt;h2 id=&quot;section&quot;&gt;结果输出，最主要的是数据集输出和表格输出两类&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;数据集输出&lt;/h3&gt;
+
+&lt;p&gt;数据集读取和输出，用spss格式读入，stata格式输出，实在是太方便了：  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;library&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;foreign&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+datain &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; read.spss&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;file&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;F:/DATA/data.sav&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+write.dta&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;datain&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; file&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;F:/DATA/finaldata.dta&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;表格输出&lt;/h3&gt;
+&lt;p&gt;表格输出，最有爱的就是使用xtable啦！  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;library&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;xtable&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+xtable &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; xtable&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;outbox&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;caption&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+print&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; type &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;html&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#output into html, usually used in Rmd.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#and if you use R Markdown, you should make sure the option &amp;quot;results=&amp;#39;asis&amp;#39;&amp;quot; is set.&lt;/span&gt;
+
+print&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;xtable&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#output into latex style. &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#and if you use R Sweave, you should make sure the option &amp;quot;results=tex&amp;quot; is set.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;今天新见到一个使用stargazer包的方法，确实很方便，但目前只支持Latex输出。  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;results&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;tex&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;=&lt;/span&gt;
+library&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;stargazer&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+stargazer&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;attitude&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#output basic statistics.&lt;/span&gt;
+
+stargazer&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;linear.1&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; linear.2&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; probit.model&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; title&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Regression Results&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; align&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#compare sever models in one table.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#It&amp;#39;s really awesome!&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;实际上，我的博客现在也支持Latex语言了，信不信？我输出一段儿Latex给各位看一下，哈哈。&lt;br /&gt;
+————没成功！！！只能支持公式，不支持表格！！！  &lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;图片输出&lt;/h3&gt;
+&lt;p&gt;图片输出，在Rmd中，应设置fig.show=’asis’；在Rnw中，应设置fig=TRUE。  &lt;/p&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;万能的例外情况&lt;/h3&gt;
+&lt;p&gt;当然，很多情况下，也会遇到xtable不识别的情况，特别是复杂建模使用不常见的程序之时。那怎么办呢？capture.output可以直接输出屏显内容，真正的所见即所得：  &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;capture.output&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; file &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; append &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+capture.output&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;summary&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;modelfit&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; file &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;F:/DATA/output.txt&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+                <link>http://www.anaharb.com/2014/0216/R-outcome-export</link>
+                <guid>http://www.anaharb.com/2014/0216/R-outcome-export</guid>
                 <pubDate>2014-02-16T00:00:00+08:00</pubDate>
         </item>
 
@@ -70,8 +161,8 @@ setwd&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&
 
 &lt;p&gt;上述语句相对简单，以后如果有空，可以整理成function来使用。&lt;/p&gt;
 </description>
-                <link>http://kunghiu.github.io/2014/0216/R-filename</link>
-                <guid>http://kunghiu.github.io/2014/0216/R-filename</guid>
+                <link>http://www.anaharb.com/2014/0216/R-filename</link>
+                <guid>http://www.anaharb.com/2014/0216/R-filename</guid>
                 <pubDate>2014-02-16T00:00:00+08:00</pubDate>
         </item>
 
@@ -101,8 +192,8 @@ setwd&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&
 &lt;p&gt;之后，将其复制粘贴到模板（我的是post.html）中正文div下面，保存上传，即可。&lt;br /&gt;
 祝好运！&lt;/p&gt;
 </description>
-                <link>http://kunghiu.github.io/2014/0215/Jekyll-duoshuo-comments</link>
-                <guid>http://kunghiu.github.io/2014/0215/Jekyll-duoshuo-comments</guid>
+                <link>http://www.anaharb.com/2014/0215/Jekyll-duoshuo-comments</link>
+                <guid>http://www.anaharb.com/2014/0215/Jekyll-duoshuo-comments</guid>
                 <pubDate>2014-02-15T00:00:00+08:00</pubDate>
         </item>
 
@@ -130,8 +221,8 @@ setwd&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&
 重新运行Jekyll server，Generating… done.&lt;br /&gt;
 祝好运！&lt;/p&gt;
 </description>
-                <link>http://kunghiu.github.io/2014/0215/Jekyll-UTF-8</link>
-                <guid>http://kunghiu.github.io/2014/0215/Jekyll-UTF-8</guid>
+                <link>http://www.anaharb.com/2014/0215/Jekyll-UTF-8</link>
+                <guid>http://www.anaharb.com/2014/0215/Jekyll-UTF-8</guid>
                 <pubDate>2014-02-15T00:00:00+08:00</pubDate>
         </item>
 
@@ -152,8 +243,8 @@ setwd&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}&lt;/script&gt;
 
 </description>
-                <link>http://kunghiu.github.io/2014/0215/Jekyll-MathJax</link>
-                <guid>http://kunghiu.github.io/2014/0215/Jekyll-MathJax</guid>
+                <link>http://www.anaharb.com/2014/0215/Jekyll-MathJax</link>
+                <guid>http://www.anaharb.com/2014/0215/Jekyll-MathJax</guid>
                 <pubDate>2014-02-15T00:00:00+08:00</pubDate>
         </item>
 
@@ -176,8 +267,8 @@ Logistic回归，大家应该都耳熟能详的，它的因变量是1或0，自�
 支持向量机，SVM，这个东西蛮有趣的，不是统计学家开发的，其中也没有用到统计理论，但对于很复杂的数据，却可以很高效的对数据进行分类，效果也相当理想。合并上核理论（Kernel），可对SVM做如下理解，SVM可以在多组数据中画出一条条曲线甚至曲面，将不同组的数据分开，而将错分的数据降到最低。
 除上述方法之外，还有一些诸如人工神经网络，集成学习等等一些方法，实践中确实少用，以后有机会再整理。&lt;/p&gt;
 </description>
-                <link>http://kunghiu.github.io/2014/0215/Classification-Algorithm</link>
-                <guid>http://kunghiu.github.io/2014/0215/Classification-Algorithm</guid>
+                <link>http://www.anaharb.com/2014/0215/Classification-Algorithm</link>
+                <guid>http://www.anaharb.com/2014/0215/Classification-Algorithm</guid>
                 <pubDate>2014-02-15T00:00:00+08:00</pubDate>
         </item>
 
@@ -186,8 +277,8 @@ Logistic回归，大家应该都耳熟能详的，它的因变量是1或0，自�
                 <description>&lt;p&gt;This post marks that the first day of the establish of this Github blogsite.
 Though it cost me almost two days of it, it really makes me happy.&lt;/p&gt;
 </description>
-                <link>http://kunghiu.github.io/2014/0111/hello-world</link>
-                <guid>http://kunghiu.github.io/2014/0111/hello-world</guid>
+                <link>http://www.anaharb.com/2014/0111/hello-world</link>
+                <guid>http://www.anaharb.com/2014/0111/hello-world</guid>
                 <pubDate>2014-01-11T00:00:00+08:00</pubDate>
         </item>
 

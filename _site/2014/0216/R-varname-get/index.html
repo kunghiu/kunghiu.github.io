@@ -80,6 +80,7 @@
 如下get()的使用示例，shortname[i]所指向的元素自动成为一个变量名参与到函数之中。  </p>
 
 <div class="highlight"><pre><code class="r">newdata <span class="o">&lt;-</span> array<span class="p">(</span>iniarray<span class="p">)</span>
+<span class="c1">#assuming shortname is a vector of varnames</span>
 <span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>length<span class="p">(</span>shortname<span class="p">)){</span>
   newdata <span class="o">&lt;-</span> cbind<span class="p">(</span>newdata<span class="p">,</span> get<span class="p">(</span>shortname<span class="p">[</span>i<span class="p">])</span><span class="o">$</span>value<span class="p">)</span>
 <span class="p">}</span>
@@ -120,6 +121,10 @@ get<span class="p">(</span><span class="s">&quot;a[1]&quot;</span><span class="p
             <li>&copy; Kung Hiu 2014</li>
         </ul>
     </nav>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F33a94876a57354d0e66c61b4274695f2' type='text/javascript'%3E%3C/script%3E"));
+</script>
 </footer>
 
 </div>

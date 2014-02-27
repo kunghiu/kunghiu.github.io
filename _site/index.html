@@ -74,6 +74,40 @@
       <article class="post">
           <div class="post-header">
                 <p class="date">Feb 16, 2014</p>
+                <h1><a href="/2014/0216/git-alais-update">使用alias批处理更新github pages</a></h1>
+          </div>
+          <div class="post-body">
+            <p>每每次上传博文，都要来一套git add，commit，push，输入用户名密码，实在繁琐，于是，想到了使用批处理的方法来实现博客更新。		
+首先，要确认自己的repository是使用ssh方式同步的，可以避免http方式的需要每次都填写用户名和密码。  </p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">git</span> <span class="nb">clone</span> <span class="n">git</span><span class="vi">@github</span><span class="o">.</span><span class="n">com</span><span class="ss">:kunghiu</span><span class="o">/</span><span class="n">kunghiu</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">git</span>
+<span class="c1"># donot use https method.</span>
+</code></pre></div>
+
+<p>通常，我们需要在git terminal输入如下命令：  </p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">cd</span> <span class="n">kunghiu</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span>
+<span class="n">git</span> <span class="n">add</span>  <span class="o">--</span><span class="n">all</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;blog update&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">master</span>
+</code></pre></div>
+
+<p>现在，我们来对上述命令建立一个假名（alias），使用批处理的方式来实现：  </p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="k">alias</span><span class="o">.</span><span class="n">blog</span> <span class="s1">&#39;!cd kunghiu.github.io &amp;&amp; git add  --all &amp;&amp; git commit -m &quot;blog update&quot; &amp;&amp; git push origin master&#39;</span>
+</code></pre></div>
+
+<p>之后，每次在本地site/kunghiu.github.io下更新完博客之后，只需要在git端输入git blog，一切就统统解决啦！<br />
+赶快来试试吧！</p>
+
+          </div>
+      </article>
+  
+
+  
+      <article class="post">
+          <div class="post-header">
+                <p class="date">Feb 16, 2014</p>
                 <h1><a href="/2014/0216/R-varname-get">R语言拾遗之二[function中变量名操作]</a></h1>
           </div>
           <div class="post-body">
@@ -83,6 +117,7 @@
 如下get()的使用示例，shortname[i]所指向的元素自动成为一个变量名参与到函数之中。  </p>
 
 <div class="highlight"><pre><code class="r">newdata <span class="o">&lt;-</span> array<span class="p">(</span>iniarray<span class="p">)</span>
+<span class="c1">#assuming shortname is a vector of varnames</span>
 <span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>length<span class="p">(</span>shortname<span class="p">)){</span>
   newdata <span class="o">&lt;-</span> cbind<span class="p">(</span>newdata<span class="p">,</span> get<span class="p">(</span>shortname<span class="p">[</span>i<span class="p">])</span><span class="o">$</span>value<span class="p">)</span>
 <span class="p">}</span>
@@ -95,6 +130,70 @@ assign<span class="p">(</span><span class="s">&quot;a[1]&quot;</span><span class
 a<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">==</span> <span class="m">2</span>          <span class="c1">#FALSE</span>
 exists<span class="p">(</span><span class="s">&quot;a[1]&quot;</span><span class="p">)</span>     <span class="c1">#TRUE</span>
 get<span class="p">(</span><span class="s">&quot;a[1]&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="m">2</span>   <span class="c1">#TRUE</span>
+</code></pre></div>
+
+
+          </div>
+      </article>
+  
+
+  
+      <article class="post">
+          <div class="post-header">
+                <p class="date">Feb 16, 2014</p>
+                <h1><a href="/2014/0216/R-outcome-export">R语言拾遗之三[结果输出]</a></h1>
+          </div>
+          <div class="post-body">
+            <h2 id="section">结果输出，最主要的是数据集输出和表格输出两类</h2>
+
+<h3 id="section-1">数据集输出</h3>
+
+<p>数据集读取和输出，用spss格式读入，stata格式输出，实在是太方便了：  </p>
+
+<div class="highlight"><pre><code class="r">library<span class="p">(</span><span class="s">&quot;foreign&quot;</span><span class="p">)</span>
+datain <span class="o">&lt;-</span> read.spss<span class="p">(</span>file<span class="o">=</span><span class="s">&quot;F:/DATA/data.sav&quot;</span><span class="p">)</span>
+write.dta<span class="p">(</span>datain<span class="p">,</span> file<span class="o">=</span><span class="s">&quot;F:/DATA/finaldata.dta&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="section-2">表格输出</h3>
+<p>表格输出，最有爱的就是使用xtable啦！  </p>
+
+<div class="highlight"><pre><code class="r">library<span class="p">(</span><span class="s">&quot;xtable&quot;</span><span class="p">)</span>
+xtable <span class="o">&lt;-</span> xtable<span class="p">(</span>outbox<span class="p">,</span>caption<span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">)</span>
+
+print<span class="p">(</span>xtable<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;html&quot;</span><span class="p">)</span>
+<span class="c1">#output into html, usually used in Rmd.</span>
+<span class="c1">#and if you use R Markdown, you should make sure the option &quot;results=&#39;asis&#39;&quot; is set.</span>
+
+print<span class="p">(</span>xtable<span class="p">)</span>
+<span class="c1">#output into latex style. </span>
+<span class="c1">#and if you use R Sweave, you should make sure the option &quot;results=tex&quot; is set.</span>
+</code></pre></div>
+
+<p>今天新见到一个使用stargazer包的方法，确实很方便，但目前只支持Latex输出。  </p>
+
+<div class="highlight"><pre><code class="r"><span class="o">&lt;&lt;</span>results<span class="o">=</span>tex<span class="o">&gt;&gt;=</span>
+library<span class="p">(</span>stargazer<span class="p">)</span>
+stargazer<span class="p">(</span>attitude<span class="p">)</span>
+<span class="c1">#output basic statistics.</span>
+
+stargazer<span class="p">(</span>linear.1<span class="p">,</span> linear.2<span class="p">,</span> probit.model<span class="p">,</span> title<span class="o">=</span><span class="s">&quot;Regression Results&quot;</span><span class="p">,</span> align<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="c1">#compare sever models in one table.</span>
+<span class="c1">#It&#39;s really awesome!</span>
+<span class="o">@</span>
+</code></pre></div>
+
+<p>实际上，我的博客现在也支持Latex语言了，信不信？我输出一段儿Latex给各位看一下，哈哈。<br />
+————没成功！！！只能支持公式，不支持表格！！！  </p>
+
+<h3 id="section-3">图片输出</h3>
+<p>图片输出，在Rmd中，应设置fig.show=’asis’；在Rnw中，应设置fig=TRUE。  </p>
+
+<h3 id="section-4">万能的例外情况</h3>
+<p>当然，很多情况下，也会遇到xtable不识别的情况，特别是复杂建模使用不常见的程序之时。那怎么办呢？capture.output可以直接输出屏显内容，真正的所见即所得：  </p>
+
+<div class="highlight"><pre><code class="r">capture.output<span class="p">(</span><span class="kc">...</span><span class="p">,</span> file <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span> append <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+capture.output<span class="p">(</span>summary<span class="p">(</span>modelfit<span class="p">),</span> file <span class="o">=</span> <span class="s">&quot;F:/DATA/output.txt&quot;</span> <span class="p">)</span>
 </code></pre></div>
 
 
@@ -178,65 +277,6 @@ setwd<span class="p">(</span><span class="s">&quot;F:/DATA&quot;</span><span cla
       </article>
   
 
-  
-      <article class="post">
-          <div class="post-header">
-                <p class="date">Feb 15, 2014</p>
-                <h1><a href="/2014/0215/Jekyll-UTF-8">给github pages的本地Jekyll服务器设置中文UTF-8</a></h1>
-          </div>
-          <div class="post-body">
-            <p>本地启用Jekyll服务器时，会因字符错误，提示“invalid byte sequence in GBK”。<br />
-此问题是因字符编码错误引起的，修改方法如下：<br />
-找到：  </p>
-
-<div class="highlight"><pre><code class="java"><span class="nl">C:</span><span class="err">\</span><span class="n">RailsInstaller</span><span class="err">\</span><span class="n">Ruby1</span><span class="o">.</span><span class="mf">9.3</span><span class="err">\</span><span class="n">lib</span><span class="err">\</span><span class="n">ruby</span><span class="err">\</span><span class="n">gems</span><span class="err">\</span><span class="mf">1.9</span><span class="o">.</span><span class="mi">1</span><span class="err">\</span><span class="n">gems</span><span class="err">\</span><span class="n">jekyll</span><span class="o">-</span><span class="mf">1.4</span><span class="o">.</span><span class="mi">2</span><span class="err">\</span><span class="n">lib</span><span class="err">\</span><span class="n">jekyll</span><span class="err">\</span><span class="n">convertible</span><span class="o">.</span><span class="na">rb</span>  
-</code></pre></div>
-
-<p>在第38行左右，取消掉原有的两句  </p>
-
-<div class="highlight"><pre><code class="java"><span class="err">#</span><span class="n">self</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="na">read_with_options</span><span class="o">(</span><span class="n">File</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">base</span><span class="o">,</span> <span class="n">name</span><span class="o">),</span>  
-<span class="err">#</span>                                      <span class="n">merged_file_read_opts</span><span class="o">(</span><span class="n">opts</span><span class="o">))</span>  
-</code></pre></div>
-
-<p>添加一句  </p>
-
-<div class="highlight"><pre><code class="java"><span class="n">self</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="na">read_with_options</span><span class="o">(</span><span class="n">File</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">base</span><span class="o">,</span> <span class="n">name</span><span class="o">),:</span><span class="n">encoding</span><span class="o">=&gt;</span><span class="s">&quot;utf-8&quot;</span><span class="o">)</span>  
-</code></pre></div>
-
-<p>即可。<br />
-重新运行Jekyll server，Generating… done.<br />
-祝好运！</p>
-
-          </div>
-      </article>
-  
-
-  
-      <article class="post">
-          <div class="post-header">
-                <p class="date">Feb 15, 2014</p>
-                <h1><a href="/2014/0215/Jekyll-MathJax">在github pages上使用MathJax</a></h1>
-          </div>
-          <div class="post-body">
-            <p>MathJax没有专门给Jekyll配备插件，所以，需要使用常规的JavaScript方法来调用。<br />
-首先，在&lt;head&gt;…&lt;/head&gt;中添加JS链接：  </p>
-
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span>  
-   <span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>  
-</code></pre></div>
-
-<p>其次，将Jekyll解析器改为Kramdown，以支持Latex标记。（在_config.yml文件中修改）<br />
-如此，配置部分结束。<br />
-文章撰写时，使用双$符号标记Latex语言。前后皆有双$。<br />
-如果公式（包括双$）前后各有一个空行，则产生换行居中的公式。效果如下：  </p>
-
-<script type="math/tex; mode=display">\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}</script>
-
-
-          </div>
-      </article>
-  
-
 
 <!-- Pagination links -->
 <div class="pagination">
@@ -255,6 +295,10 @@ setwd<span class="p">(</span><span class="s">&quot;F:/DATA&quot;</span><span cla
             <li>&copy; Kung Hiu 2014</li>
         </ul>
     </nav>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F33a94876a57354d0e66c61b4274695f2' type='text/javascript'%3E%3C/script%3E"));
+</script>
 </footer>
 
 </body>
