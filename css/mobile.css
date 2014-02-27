@@ -262,11 +262,10 @@ footer {
   margin-top: 30px; }
 
 .rssstyle {
-  font-size: 0.8rem;
-}
-reset .rssstyle:hover {
-color: #333;
-}
+  font-size: 0.8rem;}
+
+.rssstyle:hover {
+  text-decoration: none;}
 
 footer ul {
   padding: 0;
