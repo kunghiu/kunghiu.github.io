@@ -162,7 +162,7 @@ header .nav-selection.archive {
 
 
 header .nav-selection.category {
-  width: 64px;
+  width: 65px;
   -webkit-transform: translateX(128px);
   -moz-transform: translateX(128px);
   -ms-transform: translateX(128px);
@@ -170,12 +170,12 @@ header .nav-selection.category {
   transform: translateX(128px); }
 
 header .nav-selection.about {
-  width: 54px;
-  -webkit-transform: translateX(202px);
-  -moz-transform: translateX(202px);
-  -ms-transform: translateX(202px);
-  -o-transform: translateX(202px);
-  transform: translateX(202px); }
+  width: 44px;
+  -webkit-transform: translateX(214px);
+  -moz-transform: translateX(214px);
+  -ms-transform: translateX(214px);
+  -o-transform: translateX(214px);
+  transform: translateX(214px); }
 
 header .nav-selection.projects {
   width: 59px;
