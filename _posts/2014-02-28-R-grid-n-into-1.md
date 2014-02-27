@@ -34,4 +34,4 @@ b <- qplot(TMPRSS4, ECADHERIN, data=spear, geom="jitter")
 grid.arrange(a,b,ncol=2)
 {% endhighlight %}
 于是，我们就得到了二合一的图片：  
-![grid 2 into 1](pic/grid2in1.png)
+![grid 2 into 1](http://kunghiu.github.io/pic/grid2in1.png)
