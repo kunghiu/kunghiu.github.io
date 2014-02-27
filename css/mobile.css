@@ -17,7 +17,7 @@ a {
   text-decoration: none; }
 
 a:hover {
-  text-decoration: underline; }
+  text-decoration: none; }
 
 h1, h2, h3, h4, h5 {
   color: #222222;
@@ -263,7 +263,8 @@ footer {
 
 .rssstyle {
   font-size: 0.8rem;
-  color: black}
+  color: #444444;
+  text-decoration: none;}
 
 .rssstyle:hover {
   text-decoration: none;}
