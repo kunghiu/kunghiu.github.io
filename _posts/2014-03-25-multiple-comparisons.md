@@ -21,12 +21,13 @@ Hypothesis Testing 假设检验
 
 确定了`α`，做判断时就会产生 __一类错误__ 和 __二类错误__   
 The probability that a hypothesis test will correctly reject a false null hypothesis is the `power` of the test.  
-Multiple Comparisons  
+Multiple Comparisons
 ----
 因为我们是在处理`a family of tests`，选择合适的界值很有难度    
 需要在`sensitivity(true positive rate)`和`specificity(true negative rate)`中进行权衡    
+
 Measures of False Positives
-----
+----  
 几种量化假阳性可能性的方法：  
 - Family-Wise Error Rate (FWER)  
  - Probability of any false positives  
@@ -41,7 +42,7 @@ FWER controlling methods:
 - Random Field Theory  
 - Permutation Tests  
 
-Family-wise null hypothesis:
+Family-wise null hypothesis:  
 - 所有的比较都没有意义  
 - 只要拒绝其中一个，就拒绝了Family-wise  
 
@@ -54,6 +55,7 @@ Bonferroni Correction
 
 Spatial Correlation
 ----
+
 Random Field Theory  
 ----
 allows one to incorporate the correlation into the calculation of the appropriate threshold.  
