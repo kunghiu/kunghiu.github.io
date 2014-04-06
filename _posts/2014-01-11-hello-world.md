@@ -7,4 +7,4 @@ categories:
 ---
 
 This post marks that the first day of the establish of this Github blogsite.
-Though it cost me almost two days of it, it really makes ![me](http://www.ituring.com.cn/download/01ficJRLU50N.small) happy.
+Though it cost me almost two days of it, it really makes me happy.
